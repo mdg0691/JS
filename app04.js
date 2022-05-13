@@ -1,32 +1,24 @@
 //Definicion de variables globlales 
 let pacientes=[];
 let turnos=[];
+let staff=[];
+let datos=[];
 let desc=0;
 let sal=true;
 const tarifa=2000;
 
-//Creacion de funcion contructora de cartera de profesionales
+//// Creacion de clases
 
-function opcion (nombre,matricula, especializacion ,orientacion, contacto) {
-    this.nombre=nombre;
-    this.matricula=matricula;
-    this.especializacion = especializacion;
-    this.orientacion=orientacion;
-    this.contacto=contacto;
+class Staff {
+    constructor(id,nombre,matricula,especializacion,orientacion,contacto){
+        this.id=id;
+        this.nombre=nombre;
+        this.matricula=matricula;
+        this.especializacion = especializacion;
+        this.orientacion=orientacion;
+        this.contacto=contacto;
+    }
 }
-
-//Creacion de Objetos de cartera de prof
-
-const opcion1 = new opcion ("Maria" , "1972837" , "Niños","Psicoalista","+543863410343")
-const opcion2 = new opcion ("Marta" , "1892734" , "Adultos","Cognitivo Conductual","+543865410743")
-const opcion3 = new opcion ("Micaela" , "1902384" , "Parejas","Gestaltico","+543873410643")
-const opcion4 = new opcion ("Marcos" , "289033" , "Familia","Sistemica","+543863410343")
-const opcion5 = new opcion ("Victor" , "1972837" , "Niños","Psicoalista","+543863410343")
-const opcion6 = new opcion ("German" , "1892734" , "Adultos","Cognitivo Conductual","+543865410743")
-const opcion7 = new opcion ("Celina" , "5802484" , "Parejas","Gestaltico","+543873410643")
-const opcion8 = new opcion ("Candela" , "4589033" , "Familia","Sistemica","+543863410343")
-
-// Creacion de clases
 
 class Turno{
     constructor(fecha,hora){
@@ -51,12 +43,23 @@ class Datos{
         this.numSesiones;
     }
 }
+//Creacion de Objetos de cartera de prof 
+const miembro1 = new Staff (1,"Maria" , "1972837" ,"Niños","Psicoalista","+543863410343");
+const miembro2 = new Staff (2,"Marta" , "1892734" ,"Adultos","Cognitivo Conductual","+543865410743");
+const miembro3 = new Staff (3,"Micaela" , "1902384" ,"Parejas","Gestaltico","+543873410643");
+const miembro4 = new Staff (4,"Marcos" , "289033" ,"Familia","Sistemica","+543863410343");
+const miembro5 = new Staff (5,"Victor" , "1972837" ,"Niños","Psicoalista","+543863410343");
+const miembro6 = new Staff (6,"German" , "1892734" ,"Adultos","Cognitivo Conductual","+543865410743");
+const miembro7 = new Staff (7,"Celina" , "5802484" ,"Parejas","Gestaltico","+543873410643");
+const miembro8 = new Staff (8,"Candela" , "4589033" ,"Familia","Sistemica","+543863410343");
+// vector stuff
+staff=[miembro1,miembro2,miembro3,miembro4,miembro5,miembro6,miembro7,miembro8];
 
 // Creacion de funciones
 
 //funcion nuevoPacient para ser agregado en el array paciente como objeto mediante funcio agregarPaciente
 
-function nuevoPaciente(){
+const nuevoPaciente=() =>{
     let nuevoPaciente=[];
     let nombre="";
     let apellido="";
@@ -66,20 +69,20 @@ function nuevoPaciente(){
     nombre=prompt("Ingrese su nombre");
     apellido=prompt("Ingrese su apellido");
     edad=Number(prompt("Ingrese su edad"));
-    correo=("Ingrese su correo electronico");
+    correo=prompt("Ingrese su correo electronico");
 
     nuevoPaciente=new Paciente(nombre,apellido,edad,correo);
     return nuevoPaciente;
 }
 
-function agregarPaciente() {
+const agregarPaciente=() => {
     return pacientes.push(nuevoPaciente());
 }
 
 
 
 //funcion Asignacion turno para ser agregado en el array turnos como objeto mediante funcion agregarTurno
-function asignacionTurno(){
+const asignacionTurno=() => {
     nuevoTurno=[];
     let fecha=0;
     let hora=0;
@@ -91,12 +94,12 @@ nuevoTurno=new Turno(fecha,hora);
 return nuevoTurno;
 }
 // Funcion agregar Turno
-function agregarTurno() {
+const agregarTurno=() => {
     return turnos.push(asignacionTurno());
 }
 
 // funcion para calcular el monto total de la sesion y ser agregada como objeto el total de la sesion y num sesion en el array pacientes, mediante funcion agregarDatos
-function calcular(sesion) {
+const calcular=(sesion)=>{
     let total=0;
 
     if(sesion==1){
@@ -109,10 +112,10 @@ function calcular(sesion) {
         alert("usted debera abonar"+" "+ total);
         return total;
 }
-
+ 
 
 // funcion para calcular el monto total 
-function pago(){
+const pago=() =>{
     let sesion=0;
     let nuevoDatos=[];
 
@@ -159,58 +162,26 @@ function pago(){
 
 }
 // Funcion agregar Datos
-function agregarPago() {
+const agregarPago=() => {
     return pacientes.push(pago());
 }
 
+const mostrarStuff=() =>{
+    texto="";
+    staff.forEach((element) => {
+        texto += `${element.id}) Lic. ${element.nombre} , ${element.especializacion} , ${element.orientacion} , Matricula ${element.matricula}\n`;
+      });
 
+    let seleccion=prompt(`Esta es la lista de prof , cual desea elegir: \n ${texto}`);
+return seleccion;
+}
 //
 
 alert("Bienvenidos a Createrapia")
-
 agregarPaciente();
-console.log(pacientes);
-
-do{
-
-tipoTerapia =Number(prompt( "¿"+ pacientes.map(post => post.nombre) +" "+ "que tipo Terapia estas buscando?: \n\t\ (Ingresa el numero correspondiente )\n\t\ 1-Niños \n\t\ 2- Adultos \n\t\ 3- Parejas \n\t\ 4-Familia"))
-
-
-    let selectProfesional=0;
-
-    if(tipoTerapia==1){
-        selectProfesional=Number(prompt("Genial"+" "+pacientes.map(post=>post.nombre)+" "+"A continuacion detallamos los profesiones disponibles en consultorio "+ " "+ opcion1.especializacion +":"+"\n\t\ (Ingrese el numero correspondiente del profesional que desea agendar un turno)"+ "\n\t\ 1 - Lic "+opcion1.nombre+","+"MP "+opcion1.matricula + " "+opcion1.orientacion + "\n\t\ 2 - Lic "+ opcion5.nombre+","+"MP"+opcion5.matricula+" "+opcion5.orientacion));
-        agregarTurno();
-        console.log(turnos);
-        agregarPago();
-    }
-    else if(tipoTerapia==2){
-        selectProfesional=Number(prompt("Genial"+" "+pacientes.map(post=>post.nombre)+" "+"A continuacion detallamos los profesiones disponibles en consultorio "+ " "+ opcion1.especializacion +":"+"\n\t\ (Ingrese el numero correspondiente del profesional que desea agendar un turno)"+ "\n\t\ 1 - Lic "+opcion1.nombre+","+"MP "+opcion1.matricula + " "+opcion1.orientacion + "\n\t\ 2 - Lic "+ opcion5.nombre+","+"MP"+opcion5.matricula+" "+opcion5.orientacion));
-        agregarTurno();
-        console.log(turnos);
-        agregarPago();
-    }
-    else if(tipoTerapia==3){
-        selectProfesional=Number(prompt("Genial"+" "+pacientes.map(post=>post.nombre)+" "+"A continuacion detallamos los profesiones disponibles en consultorio "+ " "+ opcion1.especializacion +":"+"\n\t\ (Ingrese el numero correspondiente del profesional que desea agendar un turno)"+ "\n\t\ 1 - Lic "+opcion1.nombre+","+"MP "+opcion1.matricula + " "+opcion1.orientacion + "\n\t\ 2 - Lic "+ opcion5.nombre+","+"MP"+opcion5.matricula+" "+opcion5.orientacion));
-        agregarTurno();
-        console.log(turnos);
-        agregarPago();       
-    }
-    else if(tipoTerapia==4){
-        selectProfesional=Number(prompt("Genial"+" "+pacientes.map(post=>post.nombre)+" "+"A continuacion detallamos los profesiones disponibles en consultorio "+ " "+ opcion1.especializacion +":"+"\n\t\ (Ingrese el numero correspondiente del profesional que desea agendar un turno)"+ "\n\t\ 1 - Lic "+opcion1.nombre+","+"MP "+opcion1.matricula + " "+opcion1.orientacion + "\n\t\ 2 - Lic "+ opcion5.nombre+","+"MP"+opcion5.matricula+" "+opcion5.orientacion));
-        agregarTurno();
-        console.log(turnos);
-        agregarPago();   
-    }
-    else{
-        alert("Debe ingresar un numero!")
-    }
-}
-
-while(tipoTerapia < 1 || tipoTerapia > 4);
-
+mostrarStuff();
+agregarTurno();
+agregarPago();
 alert(pacientes.map(post=>post.nombre)+" tu turno fue asignado para el dia "+turnos.map(post=>post.fecha)+" a las "+turnos.map(post=>post.hora)+" Hs,"+" el costo de la sesion es de "+pacientes.map(post=>post.total)+" Pesos."+"En tu casilla de mail recibiras un correo con la confirmacion del turno , Muchas Gracias!");
 
 console.log(pacientes);
-
-
