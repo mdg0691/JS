@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<body>
+    <h1>CreaTerapia</h1>
+    <h2>Agende su cita con un profesional</h2>
+
+    <form action="">
+        
+        Nombre:<input id="nombre" type="text" placeholder="Ingresar nombre" class="form-control my-2">
+        <br><br>
+        Apellido:<input id="apellido" type="text" placeholder="Ingresar Apellido" class="form-control my-2">
+        <br><br>
+        Edad:<input id="edad" type="text" placeholder="Ingresar edad" class="form-control my-2">
+        <br><br>
+        Correo Electronico<input id="correo" type="text" placeholder="Ingresar correo" class="form-control my-2">
+        <br><br>
+        <br><br>
+        Eliga un profesional
+        <div id="staff"></div>
+        <br><br>
+        <br><br>
+        <button id="boton" class="btn btn-success" type="reset" onclick="nuevoPaciente()">Agregar</button>
+    </form>
+
+    <div class="container">
+        <table class="table" id="tabla">
+            <thead class="thead-inverse">
+                <h1>Turnos Asignados en la base de Datos</h1>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Corre Electronico</th>
+                    <th>Profesional</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+    </div>
+    <script src="app05.js"></script>
+</body>
+</html>
