@@ -25,7 +25,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"
     />
 
-    <link rel="stylesheet" href="./css/custom.css" />
+    <link rel="stylesheet" href="../css/custom.css" />
   </head>
   <body>
     <!-- Header -->
@@ -33,26 +33,26 @@
       <div class="conteiner  box-header">
         <nav class="navbar navbar-expand-lg navbar-light " >
           <div class="container-fluid" >
-            <img src="./img/logo createrapia.jpeg" class="logo-header" alt="..." >
+            <img src="../img/logo createrapia.jpeg" class="logo-header" alt="..." >
             <button class="navbar-toggler bg-white " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon  "></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mx-auto mb-4 mb-lg-0 ">
                 <li class="nav-item">
-                  <a class="btn btn-primary nav-buttom" href="./index.html" role="button">Inicio</a>
+                  <a class="btn btn-primary nav-buttom" href="../index.html" role="button">Inicio</a>
                  </li>
                 <li class="nav-item">
-                 <a class="btn btn-primary nav-buttom" href="./pages/servicios.html" role="button">Servicios</a>
+                 <a class="btn btn-primary nav-buttom" href="./servicios.html" role="button">Servicios</a>
                 </li>
                 <li class="nav-item  ">
-                  <a class="btn btn-primary nav-buttom" href="./pages/quienessomos.html" role="button">Quienes Somos</a>
+                  <a class="btn btn-primary nav-buttom" href="./quienessomos.html" role="button">Quienes Somos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="btn btn-primary nav-buttom" href="./pages/formulario.html" role="button">Contacto</a>
+                  <a class="btn btn-primary nav-buttom" href="./formulario.html" role="button">Contacto</a>
                 </li>
                 <li class="nav-item">
-                  <a class="btn btn-primary nav-buttom" href="./pages/preguntas_frecuentes.html" role="button">Preguntas Frecuentes</a>
+                  <a class="btn btn-primary nav-buttom" href="./preguntas_frecuentes.html" role="button">Preguntas Frecuentes</a>
                 </li>
               </ul>
             </div>
@@ -61,76 +61,72 @@
       </div>
     </header>
     <main class="main-index">
-      <div class="row align-items-center d-flex justify-content-center" height="">
-        <div class="col-md-12 col-sm-12 box-index">
-          <h1 class="box-index-titulo">
-            Bienvenidos a una Oportunidad de Cambio Interno
-          </h1>
-        </div>
-        <div class="col-md-12 col-sm-12 tamañoCarrusel">
-          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./img/pexels-shvets-production-750x300.jpg" class="d-block w-100 rounded" alt="..." />
-              </div>
-              <div class="carousel-item">
-                <img src="./img/terapia online750x300.jpg" class="d-block w-100 rounded" alt="..." />
-              </div>
-              <div class="carousel-item">
-                <img src="./img/terapia-infantil-terapia-para-padres-750x300.jpg" class="d-block w-100 rounded" alt="..."/>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+
+      <h1>Seleccione el tipo de Asistencia y Prestacion</h1>
+      <form action="">
+        <div class="row">
+          <div class="col">
+            <!-- <ul> -->
+              
+              <!-- <li> -->
+                <div class="btn-group" id="firstButtonGroup" role="group" aria-label="Basic radio toggle button group">
+                  <button type="button" data-bs-toggle="button"  class="btn btn-primary btn-lg rounded-pill"  name="btnradio" value="categoryTerapia" id="categoryTerapia" autocomplete="off" >Terapia</button>
+                  
+                
+                  <button type="button"  class="btn btn-primary btn-lg rounded-pill"  name="btnradio" value="categoryDiagnostico" id="diagnosticoTerapia" autocomplete="off">Diagnostico</button>
+                  
+                
+                  <button type="button"  class="btn btn-primary btn-lg rounded-pill" name="btnradio" value="categoryAsesoramiento" id="asesoramientoTerapia" autocomplete="off">Asesoramiento</button>
+                
+                <!-- Agrego Botones Servico con JS   -->
+                </div> 
+                <br><br>
+                <div class="btn-group" id="secondButtonGroup" role="group" aria-label="Basic radio toggle button group">
+                </div>
+                <!-- Agrego botones profesional -->
+                <br><br>
+                <div class="btn-group" id="thirdButtonGroup" role="group" aria-label="Basic radio toggle button group">
+                </div>
+              <!-- </li> -->
+            <!-- </ul> -->
           </div>
         </div>
-      </div>
+        <button type="button" onclick="guardar()" class="btn btn-primary">Guardar</button>
+        <button>
+        </button>
 
-      <div class="row container-fluid d-flex justify-content-center align-items-center bg-white p-5">
-        <div class="col">
-          <h2 class="text-center titulo-parrafo-index">
-            Desde la psicoterapia cognitiva integrativa brindaré herramientas
-            que ayuden a desarrollar recursos internos para lograr un bienestar
-            psicológico y mejorar la calidad de vida de las personas.
-          </h2>
-          <p class="parrafo-index">
-            ¿Cómo trabajo desde El modelo Cognitivo – Integrativo? Primero
-            contarles que este enfoque ha cobrado a lo largo de los últimos años
-            un lugar importante en la Psicoterapia. Distintos autores plantearon
-            la necesidad de un modelo que integre diferentes enfoques con sus
-            respectivas concepciones teóricas y prácticas para el abordaje de
-            los diversos trastornos psicológicos.   El Paradigma Cognitivo es el
-            seleccionado como punto de apoyo en la integración, realizando
-            valiosos aportes en distintos campos de la Salud mental. El objetivo
-            de la psicoterapia es ayudar a que las personas cambien y
-            desarrollen sus potencialidades, aclarando que: Todos, absolutamente
-            todos los seres humanos contamos con grandes virtudes, recursos,
-            herramientas y habilidades para realizar algo puntual. En otras
-            palabras, "todos somos buenos para algo y podemos resolver lo que
-            nos esté sucediendo; hay veces que no hemos encontrado la forma de
-            haceelo y eso genera malestar". Las diferentes teorías en
-            psicoterapia deben estar  al servicio de comprender la génesis de
-            los desajustes psicológicos y poder predecir cómo estos desajustes
-            pueden ser modificados. En cuanto a las estrategias clínicas de
-            intervención, la eficacia de las mismas residen en lograr el máximo
-            cambio deseable alcanzado, en el menor tiempo posible y con la
-            permanencia más estable. Eso será posible si el consultante está
-            dispuesto a cambiar a pesar que eso genere incomodidad y resistencia
-            como todo cambio
-          </p>
+        <!-- <div class="conteiner">
+          <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Seleccione un Profesional</legend>
+            <div class="col-sm-10" id="staff">
+              
+            </div>
+          </fieldset>
         </div>
-      </div>
+        <button type="reset" onclick="agregar()" class="btn btn-primary">Agendar</button> -->
+      </form>
+      
+      
+
+      <div class="container">
+        <table class="table" id="tabla">
+            <thead class="thead-inverse">
+                <h1>Turnos Asignados en la base de Datos</h1>
+                <tr>
+                    <th>Correo Electronico</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Ciudad</th>
+                    <th>Profesional</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            </tbody>
+    
+        </table>
+    </div>
     </main>
     <!-- Footer -->
     <footer>
@@ -173,5 +169,7 @@
       </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../JS/app06_02.js"></script>
   </body>
 </html>

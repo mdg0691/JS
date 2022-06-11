@@ -1,0 +1,51 @@
+[
+    {
+        "id":"1",
+        "profesional":"Lic. Celina Muñoz",
+        "imagen":"../img/cely.jpeg",
+        "matricula":"MP 20749",
+        "descripcion":"Lic. en Psicología. Psicóloga de Adultos y Adultos Mayores. Formación: Terapia Cognitivo-Conductual (TCC). Terapia de Aceptación y Compromiso (ACT). Activación conductual (AC). Neuropsicología. Orientación Terapéutica: Abordaje Psicoterapéutico Integrativo. Prestaciones Online: Terapia Psicológica Individual Terapia Breve-Focalizada. Evaluación Psicológica. Psicodiagnóstico. Neuropsicología."
+    },
+    {
+        "id":"2",
+        "profesional":"Lic. Candela Iglesias",
+        "imagen":"../img/Integrante 2.jpeg",
+        "matricula":"MP 20959",
+        "descripcion":"Lic. en Psicología. Psicóloga de Adultos. Formación: Terapia Psicodinámica (Psicoanálisis). Terapia Cognitivo-Conductual (TCC). Terapia Sistémica. Terapia Estratégica Focalizada en Problemas. Orientación Terapéutica: Abordaje Psicoterapéutico Integrativo. Prestaciones Online: Terapia Psicológica Individual. Terapia de Pareja. Asesoramiento Psicológico Clínico. Evaluación Psicológica y Psicodiagnóstico. Psicoprofilaxis Quirúrgica. Orientación a padres."
+    },
+    {
+        "id":"3",
+        "profesional":"Lic. Luciana Gonzalez",
+        "imagen":"../img/Integrante 2.jpeg",
+        "matricula":"MP 20959",
+        "descripcion":"Lic. en Psicología. Psicóloga de Adultos. Formación: Terapia Psicodinámica (Psicoanálisis). Terapia Cognitivo-Conductual (TCC). Terapia Sistémica. Terapia Estratégica Focalizada en Problemas. Orientación Terapéutica: Abordaje Psicoterapéutico Integrativo. Prestaciones Online: Terapia Psicológica Individual. Terapia de Pareja. Asesoramiento Psicológico Clínico. Evaluación Psicológica y Psicodiagnóstico. Psicoprofilaxis Quirúrgica. Orientación a padres."
+    },
+    {
+        "id":"4",
+        "profesional":"Lic. Cecilia Schuster",
+        "imagen":"./img/integrante 2",
+        "matricula":"MP 20959",
+        "descripcion":"Lic. en Psicología. Psicóloga de Adultos. Formación: Terapia Psicodinámica (Psicoanálisis). Terapia Cognitivo-Conductual (TCC). Terapia Sistémica. Terapia Estratégica Focalizada en Problemas. Orientación Terapéutica: Abordaje Psicoterapéutico Integrativo. Prestaciones Online: Terapia Psicológica Individual. Terapia de Pareja. Asesoramiento Psicológico Clínico. Evaluación Psicológica y Psicodiagnóstico. Psicoprofilaxis Quirúrgica. Orientación a padres."
+    },
+    {
+        "id":"5",
+        "profesional":"Lic. Alejandro Matesich",
+        "imagen":"./img/integrante 2",
+        "matricula":"MP 20959",
+        "descripcion":"Lic. en Psicología. Psicóloga de Adultos. Formación: Terapia Psicodinámica (Psicoanálisis). Terapia Cognitivo-Conductual (TCC). Terapia Sistémica. Terapia Estratégica Focalizada en Problemas. Orientación Terapéutica: Abordaje Psicoterapéutico Integrativo. Prestaciones Online: Terapia Psicológica Individual. Terapia de Pareja. Asesoramiento Psicológico Clínico. Evaluación Psicológica y Psicodiagnóstico. Psicoprofilaxis Quirúrgica. Orientación a padres."
+    },
+    {
+        "id":"6",
+        "profesional":"Lic. Lucia Garcia",
+        "imagen":"./img/integrante 2",
+        "matricula":"MP 20959",
+        "descripcion":"Lic. en Psicología. Psicóloga de Adultos. Formación: Terapia Psicodinámica (Psicoanálisis). Terapia Cognitivo-Conductual (TCC). Terapia Sistémica. Terapia Estratégica Focalizada en Problemas. Orientación Terapéutica: Abordaje Psicoterapéutico Integrativo. Prestaciones Online: Terapia Psicológica Individual. Terapia de Pareja. Asesoramiento Psicológico Clínico. Evaluación Psicológica y Psicodiagnóstico. Psicoprofilaxis Quirúrgica. Orientación a padres."
+    },
+    {
+        "id":"7",
+        "profesional":"Lic. Malena Martinez",
+        "imagen":"./img/integrante 2",
+        "matricula":"MP 20959",
+        "descripcion":"Lic. en Psicología. Psicóloga de Adultos. Formación: Terapia Psicodinámica (Psicoanálisis). Terapia Cognitivo-Conductual (TCC). Terapia Sistémica. Terapia Estratégica Focalizada en Problemas. Orientación Terapéutica: Abordaje Psicoterapéutico Integrativo. Prestaciones Online: Terapia Psicológica Individual. Terapia de Pareja. Asesoramiento Psicológico Clínico. Evaluación Psicológica y Psicodiagnóstico. Psicoprofilaxis Quirúrgica. Orientación a padres."
+    }
+]

@@ -52,44 +52,44 @@ padreButtonServicio.addEventListener("click",doSomethingServicio);
 
 function doSomethingServicio(j){
 
-    let buttonGroup=document.getElementById('thirdButtonGroup');
+    
     let clickedItem="";
     (j.target != j.currentTarget) ? clickedItem=j.target.id : j.stopPropagation(); //Operador Ternario
 
     {
             console.log(clickedItem);
          if(clickedItem=="Terapia Individual"){
-            buttonGroup.innerHTML = ""; 
-            addButtonsGroup(staff[0].nombre ,"thirdButtonGroup");
+            arrayTerapiaIndividual=[arrayDataJson[0],arrayDataJson[1]];
+            añadirProfesional(arrayTerapiaIndividual);
          }
 
         else if (clickedItem=="terapia de Pereja"){
-            buttonGroup.innerHTML = "";
-            addButtonsGroup(staff[1].nombre,"thirdButtonGroup");
+            arrayTerapiaIndividual=[arrayDataJson[0],arrayDataJson[1]];
+            añadirProfesional(arrayTerapiaIndividual);
         }
         else if (clickedItem=="terapia de Niños"){
-            buttonGroup.innerHTML = "";
-            addButtonsGroup(staff[2].nombre,"thirdButtonGroup");
+            arrayTerapiaIndividual=[arrayDataJson[0],arrayDataJson[1]];
+            añadirProfesional(arrayTerapiaIndividual);
         }
         else if (clickedItem=="Asesoramiento Clinico"){
-            buttonGroup.innerHTML = "";
-            addButtonsGroup(staff[3].nombre,"thirdButtonGroup");
+            arrayTerapiaIndividual=[arrayDataJson[0],arrayDataJson[1]];
+            añadirProfesional(arrayTerapiaIndividual);
         }
         else if (clickedItem=="Orientacion a Padres"){
-            buttonGroup.innerHTML = "";
-            addButtonsGroup(staff[4].nombre,"thirdButtonGroup");
+            arrayTerapiaIndividual=[arrayDataJson[0],arrayDataJson[1]];
+            añadirProfesional(arrayTerapiaIndividual);
         }
         else if (clickedItem=="Evaluacion Psicologica"){
-            buttonGroup.innerHTML = "";
-            addButtonsGroup(staff[5].nombre,"thirdButtonGroup");
+            arrayTerapiaIndividual=[arrayDataJson[0],arrayDataJson[1]];
+            añadirProfesional(arrayTerapiaIndividual);
         }
         else if (clickedItem=="Orientacion a Padres"){
-            buttonGroup.innerHTML = "";
-            addButtonsGroup(staff[6].nombre,"thirdButtonGroup");
+            arrayTerapiaIndividual=[arrayDataJson[0],arrayDataJson[1]];
+            añadirProfesional(arrayTerapiaIndividual);
         }
         else{
-            buttonGroup.innerHTML = "";
-            addButtonsGroup(staff[7].nombre,"thirdButtonGroup");
+            arrayTerapiaIndividual=[arrayDataJson[0],arrayDataJson[1]];
+            añadirProfesional(arrayTerapiaIndividual);
         }
 
     }
@@ -109,15 +109,11 @@ const addButtonsGroup=(x,y) =>{
     li.setAttribute("type","button");
     li.setAttribute("id",servicio);
 
-    li.innerHTML=servicio;
+    li.innerHTML=`Lic ${servicio}`;
     
     buttonGroup.appendChild(li);
 }
 }
-
-
-
-
 class Staff {
     constructor(id,nombre,matricula,especializacion,orientacion,contacto){
         this.id=id;
@@ -175,76 +171,77 @@ const guardar=() =>{
       })
 }
 
+let arrayDataJson=[];
+let arrayTerapiaIndividual=[];
+let arrayTerapiaPareja=[];
+let arrayTerapiaNiños=[];
+let arrayAsoramientoClinico=[];
 
-
-// for (const persona of staff) {
-//     let li = document.createElement("div");
-//     li.classList.add('form-check');
-//     let buttonRadio = document.createElement("input");
-//     buttonRadio.classList.add('form-check-input');
-//     buttonRadio.setAttribute("type","radio");
-//     buttonRadio.setAttribute("name","names");
-//     buttonRadio.setAttribute("value",persona.nombre);
-//     buttonRadio.setAttribute("id","id");
-//     let label= document.createElement("label");
-//     label.classList.add('form-check-label');
-//     li.innerHTML=` ${persona.id} │ Lic ${persona.nombre} │  Especialidad ${persona.especializacion}  │  N°Matricula ${persona.matricula}`;
-    
-//     padre.appendChild(li);
-//     li.appendChild(buttonRadio);
-//     buttonRadio.appendChild(label);
-
-// }
-
-// profesional=findSelector();
-// newPacientParse.push(profesional);
-// console.log(newPacientParse);
-
-// function agregar() {
-
-//     // console.log("Datos agregados");
-//     // dataBase.push(newPaciente);
-//     // console.log(dataBase);
+const añadirProfesional=(x) =>{
+    let buttonGroup="";
    
-//     tbodyTabla.innerHTML = "";
+    arrayTerapiaIndividual.forEach(element => {
+        buttonGroup="";
+        buttonGroup.innerHTML = "";
+        buttonGroup=document.getElementById("thirdButtonGroup");
+            
+        buttonGroup.innerHTML+=`<div>       
+        <img style="width:150px"; src="${element.imagen}" class="rounded-circle" alt="...">
+        <h1>${element.profesional}</h1>
+        <h1>${element.matricula}</h1>
+        <!--<p class="parrafo-index">${element.descripcion}</p>  -->
+            
+            </div>`
+        });
+}
 
-//     newPacientParse.forEach(function (registro) {
-//         tbodyTabla.innerHTML += `<tr><td>${registro.correo}
-//                                 </td><td>${registro.nombre}
-//                                 </td><td>${registro.apellido}
-//                                 </td><td>${registro.fechaNacimiento}
-//                                 </td><td>${registro.city}
-//                                 </td></tr>`;
-//     });
+fetch("../datos.json")
+    .then(resp=>resp.json())
+    .then(data=>{arrayDataJson=data;
+    });
+  
 
-// }
-// function doSomething(j){
+    / For full API documentation, including code examples,
+// visit http://wix.to/94BuAAs
+import {fetch} from 'wix-fetch';
+ 
+$w.onReady(function () {
+  //TODO: write your page related code here...
+  https://api.emailjs.com/api/v1.0/email/send
+});
+ 
+export function button1_click(event, $w) {
+  // Change all values to your own
+  let params = {
+      user_id: 'YOUR_PUBLIC_KEY',
+      service_id: 'service_kv5u9yt',
+      template_id: 'YOUR_TEMPLATE_ID',
+      template_params: {
+        'YOUR_PARAM1_NAME': 'YOUR_PARAM1_VALUE',
+        'YOUR_PARAM2_NAME': 'YOUR_PARAM2_VALUE'
+      }
+  };
 
-//     let buttonGroup=document.getElementById('secondButtonGroup');
-//     let clickedItem="";
+  let headers = {
+      'Content-type': 'application/json'
+  };
 
-//     if(j.target != j.currentTarget)
-//     {
-//          clickedItem=j.target.id;
+  let options = {
+      method: 'POST',
+      headers: headers,
+      body: JSON.stringify(params)
+  };
 
-         
-//          if(clickedItem=="categoryTerapia"){
-//             buttonGroup.innerHTML = ""; 
-//             addButtonsGroup(area1,"secondButtonGroup");
-//          }
-
-//         else if (clickedItem=="diagnosticoTerapia"){
-//             buttonGroup.innerHTML = "";
-//             addButtonsGroup(area2,"secondButtonGroup");
-//         }
-//         else{
-//             buttonGroup.innerHTML = "";
-//             addButtonsGroup(area3,"secondButtonGroup");
-//         }
-
-//     }
-//     j.stopPropagation();
-
-// }
-
-
+  fetch('https://api.emailjs.com/api/v1.0/email/send', options)
+    .then((httpResponse) => {
+        if (httpResponse.ok) {
+            console.log('Your mail is sent!');
+        } else {
+            return httpResponse.text()
+              .then(text => Promise.reject(text));
+        }
+    })
+    .catch((error) => {
+        console.log('Oops... ' + error);
+    });
+}
