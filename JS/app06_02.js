@@ -107,6 +107,7 @@ const addButtonsGroup=(x,y) =>{
     // li.classList.add('tipoServicio ');
     li.setAttribute("class", "btn btn-primary btn-lg rounded-pill");
     li.setAttribute("type","button");
+    li.setAttribute("name",servicio);
     li.setAttribute("id",servicio);
 
     li.innerHTML=`Lic ${servicio}`;
@@ -186,9 +187,13 @@ const añadirProfesional=(x) =>{
         buttonGroup=document.getElementById("thirdButtonGroup");
             
         buttonGroup.innerHTML+=`<div>       
-        <img style="width:150px"; src="${element.imagen}" class="rounded-circle" alt="...">
+        <!--<img style="width:200px"; src="${element.imagen}" class="rounded-circle" alt="...">-->
+        <button type="button" id="${element.id}" name="${element.profesional}">
+            <img src="${element.imagen}" class="rounded-circle" style="width:200px";>
+        </button>
         <h1>${element.profesional}</h1>
         <h1>${element.matricula}</h1>
+        
         <!--<p class="parrafo-index">${element.descripcion}</p>  -->
             
             </div>`
@@ -201,47 +206,47 @@ fetch("../datos.json")
     });
   
 
-    / For full API documentation, including code examples,
-// visit http://wix.to/94BuAAs
-import {fetch} from 'wix-fetch';
+   
+// // visit http://wix.to/94BuAAs
+// import {fetch} from 'wix-fetch';
  
-$w.onReady(function () {
-  //TODO: write your page related code here...
-  https://api.emailjs.com/api/v1.0/email/send
-});
+// $w.onReady(function () {
+//   //TODO: write your page related code here...
+//   https://api.emailjs.com/api/v1.0/email/send
+// });
  
-export function button1_click(event, $w) {
-  // Change all values to your own
-  let params = {
-      user_id: 'YOUR_PUBLIC_KEY',
-      service_id: 'service_kv5u9yt',
-      template_id: 'YOUR_TEMPLATE_ID',
-      template_params: {
-        'YOUR_PARAM1_NAME': 'YOUR_PARAM1_VALUE',
-        'YOUR_PARAM2_NAME': 'YOUR_PARAM2_VALUE'
-      }
-  };
+// export function button1_click(event, $w) {
+//   // Change all values to your own
+//   let params = {
+//       user_id: 'YOUR_PUBLIC_KEY',
+//       service_id: 'service_kv5u9yt',
+//       template_id: 'YOUR_TEMPLATE_ID',
+//       template_params: {
+//         'YOUR_PARAM1_NAME': 'YOUR_PARAM1_VALUE',
+//         'YOUR_PARAM2_NAME': 'YOUR_PARAM2_VALUE'
+//       }
+//   };
 
-  let headers = {
-      'Content-type': 'application/json'
-  };
+//   let headers = {
+//       'Content-type': 'application/json'
+//   };
 
-  let options = {
-      method: 'POST',
-      headers: headers,
-      body: JSON.stringify(params)
-  };
+//   let options = {
+//       method: 'POST',
+//       headers: headers,
+//       body: JSON.stringify(params)
+//   };
 
-  fetch('https://api.emailjs.com/api/v1.0/email/send', options)
-    .then((httpResponse) => {
-        if (httpResponse.ok) {
-            console.log('Your mail is sent!');
-        } else {
-            return httpResponse.text()
-              .then(text => Promise.reject(text));
-        }
-    })
-    .catch((error) => {
-        console.log('Oops... ' + error);
-    });
-}
+//   fetch('https://api.emailjs.com/api/v1.0/email/send', options)
+//     .then((httpResponse) => {
+//         if (httpResponse.ok) {
+//             console.log('Your mail is sent!');
+//         } else {
+//             return httpResponse.text()
+//               .then(text => Promise.reject(text));
+//         }
+//     })
+//     .catch((error) => {
+//         console.log('Oops... ' + error);
+//     });
+// }

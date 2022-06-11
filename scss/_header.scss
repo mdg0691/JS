@@ -1,0 +1,30 @@
+@import "variables";
+header {
+  width: 98%;
+  max-width: 1800px;
+  margin: auto;
+  border-radius: 10px;
+  background: linear-gradient(to right, $primary-color, #0f0f8a);
+
+
+  .box-header {
+   
+    .logo-header {
+      width: 150px;
+      border-radius: 20rem;
+      border: 6px solid $primary-color-2;
+    }
+    .nav-buttom {
+      border: none;
+      background-color: $primary-color;
+      padding: 1rem 1rem;
+      cursor: pointer;
+      font-size: $font-size-1;
+      font-weight: bolder;
+      border-radius: 20px;
+    }
+    .nav-buttom:hover {
+      background-color: $primary-color-2;
+    }
+  }
+}
