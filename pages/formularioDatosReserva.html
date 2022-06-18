@@ -61,29 +61,30 @@
       </div>
     </header>
     <main class="main-index">
-
-      <h1>Seleccione el tipo de Asistencia y Prestacion</h1>
+      <div class="row align-items-center d-flex justify-content-center " height="">
+        <div class="col-md-12 col-sm-12 box-index contenedorFormulario">
+          <h1 class="box-index-titulo">Seleccione el tipo de Asistencia y Prestacion</h1>
       <!-- Formulario   -->
-      <form action="">
-        <div class="row">
-          <div class="col">
+          <form action="">
+        <div class="row ">
+          <div class="col-md-6 contenedorFormulario">
             <div class="btn-group" id="firstButtonGroup" role="group" aria-label="Basic radio toggle button group">
-              <button type="button" data-bs-toggle="button"  class="btn btn-primary btn-lg rounded-pill"  name="categoryTerapia" value="categoryTerapia" id="categoryTerapia" autocomplete="off" >Terapia</button>
+              <label for="" class="col-md-2 col-form-label "><h3>Area</h3></label>
               
-            
-              <button type="button"  class="btn btn-primary btn-lg rounded-pill"  name="categoryDiagnostico" value="categoryDiagnostico" id="diagnosticoTerapia" autocomplete="off">Diagnostico</button>
-              
-            
-              <button type="button"  class="btn btn-primary btn-lg rounded-pill" name="categoryAsesoramiento" value="categoryAsesoramiento" id="asesoramientoTerapia" autocomplete="off">Asesoramiento</button>
-            
-            <!-- Agrego Botones Servico con JS   -->
+              <div class="col-md-12">
+                <button type="button" data-bs-toggle="button"  class="btn btn-primary btn-lg rounded-pill"  name="categoryTerapia" value="categoryTerapia" id="categoryTerapia" autocomplete="off" >Terapia</button>
+                <button type="button"  class="btn btn-primary btn-lg rounded-pill"  name="categoryDiagnostico" value="categoryDiagnostico" id="diagnosticoTerapia" autocomplete="off">Diagnostico</button>
+                <button type="button"  class="btn btn-primary btn-lg rounded-pill" name="categoryAsesoramiento" value="categoryAsesoramiento" id="asesoramientoTerapia" autocomplete="off">Asesoramiento</button>
+              </div>
             </div> 
+           <!-- Agrego Botones Servico con JS   -->
+
             <br><br>
             <div class="btn-group" id="secondButtonGroup" role="group" aria-label="Basic radio toggle button group">
             </div>
             <!-- Agrego botones profesional -->
             <br><br>
-            <div class="btn-group" id="thirdButtonGroup" role="group" aria-label="Basic radio toggle button group">
+            <div class="btn-group thirdButtonGroup" id="thirdButtonGroup" role="group" aria-label="Basic radio toggle button group">
             </div>
           </div>
         </div>
@@ -101,6 +102,13 @@
         </div>
         <button type="reset" onclick="agregar()" class="btn btn-primary">Agendar</button> -->
       </form>
+        </div>
+        <div class="col-md-12 col-sm-12 tamañoCarrusel">
+        </div>
+      </div>  
+
+      
+      
       
       
 

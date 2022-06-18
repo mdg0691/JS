@@ -1,10 +1,9 @@
 const newPacientLS=localStorage.getItem("newPacient");
 const newPacientParse=JSON.parse(newPacientLS);
 const tbodyTabla = document.querySelector('.table tbody');
-
 console.log(newPacientLS)
 console.log(newPacientParse)
- 
+
 
 let findSelector= () =>{
     let selector=document.querySelectorAll("input[name='names']:checked").value;
@@ -61,6 +60,7 @@ function doSomethingServicio(j){
          if(clickedItem=="Terapia Individual"){
             arrayTerapiaIndividual=[arrayDataJson[0],arrayDataJson[1]];
             añadirProfesional(arrayTerapiaIndividual);
+
          }
 
         else if (clickedItem=="terapia de Pereja"){
@@ -100,55 +100,32 @@ function doSomethingServicio(j){
 
 const addButtonsGroup=(x,y) =>{
     let buttonGroup="";
+    let buttonServicio="";
     buttonGroup=document.getElementById(y);
     console.log(buttonGroup);
+    buttonGroup.innerHTML+=`
+    <div class="btn-group" id="secondButtonGroup" role="group" aria-label="Basic radio toggle button group">
+    <label for="" class="col-md-2 col-form-label "><h3>Servicio</h3></label>
+    
+    <div class="buttonServicios">
+     
+    </div>
+  </div> 
+    
+    `;
+
+    buttonServicio=document.querySelector(`.buttonServicios`);
+    
     for (let servicio of x) {
-    let li = document.createElement("button");
-    // li.classList.add('tipoServicio ');
-    li.setAttribute("class", "btn btn-primary btn-lg rounded-pill");
-    li.setAttribute("type","button");
-    li.setAttribute("name",servicio);
-    li.setAttribute("id",servicio);
-
-    li.innerHTML=`Lic ${servicio}`;
+   
+    buttonServicio.innerHTML+=`
     
-    buttonGroup.appendChild(li);
-}
-}
-class Staff {
-    constructor(id,nombre,matricula,especializacion,orientacion,contacto){
-        this.id=id;
-        this.nombre=nombre;
-        this.matricula=matricula;
-        this.especializacion = especializacion;
-        this.orientacion=orientacion;
-        this.contacto=contacto;
-    }
-}
-
-//Creacion de Objetos de cartera de prof 
-const miembro1 = new Staff ("1","Maria" , "1972837" ,"Niños","Psicoalista","+543863410343");
-const miembro2 = new Staff ("2","Marta" , "1892734" ,"Adultos","Cognitivo Conductual","+543865410743");
-const miembro3 = new Staff ("3","Micaela" , "1902384" ,"Parejas","Gestaltico","+543873410643");
-const miembro4 = new Staff ("4","Marcos" , "289033" ,"Familia","Sistemica","+543863410343");
-const miembro5 = new Staff ("5","Victor" , "1972837" ,"Niños","Psicoalista","+543863410343");
-const miembro6 = new Staff ("6","German" , "1892734" ,"Adultos","Cognitivo Conductual","+543865410743");
-const miembro7 = new Staff ("7","Celina" , "5802484" ,"Parejas","Gestaltico","+543873410643");
-const miembro8 = new Staff ("8","Candela" , "4589033" ,"Familia","Sistemica","+543863410343");
-// vector stuff
-let staff=[miembro1,miembro2,miembro3,miembro4,miembro5,miembro6,miembro7,miembro8];
-//Desestructuracion de Objetos
-
-const spreadStaff= [...staff];
-const spreadMiembros=[...spreadStaff];
-
-
-// const desestructurar=(staff) =>{
+      <button class="btn btn-primary btn-lg rounded-pill" type="button" id=${servicio}>${servicio}</button>
     
-//     const {miembro1}=Staff;
-
-// }
-
+    `;
+    
+}
+}
 
 
 
@@ -180,24 +157,51 @@ let arrayAsoramientoClinico=[];
 
 const añadirProfesional=(x) =>{
     let buttonGroup="";
+    buttonGroup=document.getElementById("thirdButtonGroup");
+    
+    buttonGroup.innerHTML ="";  // limpio pantalla
    
     arrayTerapiaIndividual.forEach(element => {
-        buttonGroup="";
-        buttonGroup.innerHTML = "";
-        buttonGroup=document.getElementById("thirdButtonGroup");
+       
+        buttonGroup.innerHTML+=`
+        <div class="caja" style="text-align=center;">       
             
-        buttonGroup.innerHTML+=`<div>       
-        <!--<img style="width:200px"; src="${element.imagen}" class="rounded-circle" alt="...">-->
-        <button type="button" id="${element.id}" name="${element.profesional}">
-            <img src="${element.imagen}" class="rounded-circle" style="width:200px";>
-        </button>
-        <h1>${element.profesional}</h1>
-        <h1>${element.matricula}</h1>
+            <img style="width:200px"; height="200" src="${element.imagen}" class="rounded-circle" alt="...">
+       
         
-        <!--<p class="parrafo-index">${element.descripcion}</p>  -->
-            
-            </div>`
+            <!-- <p>${element.matricula}</p> -->
+            </br>
+            </br>
+            <button class="btn btn-primary btn-lg rounded-pill" type="button" id="btn${element.id}"> <p>${element.profesional}</p> </button>
+            <div class="parrafo"></div>    
+            </br>
+            </br>
+        </div>`
         });
+
+    arrayTerapiaIndividual.forEach(boton => {
+        
+        document.querySelector(`#btn${boton.id}`).addEventListener("click",()=>{
+            buttonGroup.innerHTML ="";
+            
+            buttonGroup.innerHTML=buttonGroup.innerHTML=`
+           <div class="caja" style="text-align=center;">       
+               
+               <img style="width:200px"; height="200" src="${boton.imagen}" class="rounded-circle" alt="...">
+          
+           
+               <p>${boton.profesional}
+               <p>${boton.descripcion}
+               </br>
+               </br>
+               
+               <div class="parrafo"></div>    
+               </br>
+               </br>
+           </div>`
+        });
+        
+    })     
 }
 
 fetch("../datos.json")
@@ -206,47 +210,3 @@ fetch("../datos.json")
     });
   
 
-   
-// // visit http://wix.to/94BuAAs
-// import {fetch} from 'wix-fetch';
- 
-// $w.onReady(function () {
-//   //TODO: write your page related code here...
-//   https://api.emailjs.com/api/v1.0/email/send
-// });
- 
-// export function button1_click(event, $w) {
-//   // Change all values to your own
-//   let params = {
-//       user_id: 'YOUR_PUBLIC_KEY',
-//       service_id: 'service_kv5u9yt',
-//       template_id: 'YOUR_TEMPLATE_ID',
-//       template_params: {
-//         'YOUR_PARAM1_NAME': 'YOUR_PARAM1_VALUE',
-//         'YOUR_PARAM2_NAME': 'YOUR_PARAM2_VALUE'
-//       }
-//   };
-
-//   let headers = {
-//       'Content-type': 'application/json'
-//   };
-
-//   let options = {
-//       method: 'POST',
-//       headers: headers,
-//       body: JSON.stringify(params)
-//   };
-
-//   fetch('https://api.emailjs.com/api/v1.0/email/send', options)
-//     .then((httpResponse) => {
-//         if (httpResponse.ok) {
-//             console.log('Your mail is sent!');
-//         } else {
-//             return httpResponse.text()
-//               .then(text => Promise.reject(text));
-//         }
-//     })
-//     .catch((error) => {
-//         console.log('Oops... ' + error);
-//     });
-// }
