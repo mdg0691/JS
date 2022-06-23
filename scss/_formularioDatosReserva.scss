@@ -1,3 +1,5 @@
+    @import "popup";
+
 .main-formulario{
     width: 90%;
     max-width: 1500px;
@@ -10,7 +12,18 @@
     gap: 100px;
 }
 
-.contenedorFormulario{
-    padding: 0 70px 0 70px;
+// .contenedorFormulario{
+//     padding: 0 70px 0 7 0px;
 
+// }
+
+.icon{
+    font-size: 3em;
+    margin: 0 0 15px;
+    opacity: 0.3;
+}
+i.active{
+    color: #1a1e5a;
+    opacity: 1;
+    transform: scale(1.3);
 }
