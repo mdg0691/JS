@@ -9,7 +9,7 @@ body{
     min-height: 100vh;
     // background-image: linear-gradient(112 deg, rgba(32,38,57,1)11.4%, rgba(63,76,119,1)70.2%);
 }
-.conteiner{
+.popupConteiner{
     position: fixed;
     height: 100vh;
     width: 100%;
@@ -75,21 +75,15 @@ form-body{
     transform: translateY(-23px);
     color: #d3c9cc;
 }
-#singUp{
-    background-color: royalblue;
-    font-size: 20px;
-    padding: 10px;
-    color: #fff;
-    cursor: pointer;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.4),
-                -1px -1px 5px rgba(0,0,0,0.4);
-}
-#loginaccount a{
-    display: block;
-    text-decoration: none;
-    color: #fc427b;
-    text-align: center;
-}
+// #agendarCita{
+//     background-color: royalblue;
+//     font-size: 20px;
+//     padding: 10px;
+//     color: #fff;
+//     cursor: pointer;
+//     box-shadow: 1px 1px 5px rgba(0,0,0,0.4),
+//                 -1px -1px 5px rgba(0,0,0,0.4);
+// }
 #closebtn{
     position:absolute ;
     top: -10px;
@@ -103,13 +97,13 @@ form-body{
     color: #fc427b;
     cursor: pointer;
 }
-// #signUpBtn{
-//     background-color: royalblue;
-//     font-size: 20px;
-//     padding: 10px;
-//     color: #fff;
-//     margin: 20px;
-//     border: none;
-//     box-shadow: 1px 1px 5px rgba(0,0,0,0.4),
-//                 -1px -1px 5px rgba(0,0,0,0.4);
-// }
+#singUp{
+    background-color: royalblue;
+    font-size: 20px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    margin: 20px;
+    border: none;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.4),
+                -1px -1px 5px rgba(0,0,0,0.4);
+}

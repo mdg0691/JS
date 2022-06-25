@@ -28,7 +28,7 @@
   <body>
     <!-- Header -->
     <header>
-      <div class="box-header">
+      <div class="box-header conteiner">
         <nav class="navbar navbar-expand-lg navbar-light " >
           <div class="container-fluid" >
             <img src="../img/logo createrapia.jpeg" class="logo-header" alt="..." >
@@ -60,105 +60,78 @@
     </header>
     <main class="main-index">
       <div class="row align-items-center d-flex justify-content-center " height="">
-        <div class="col-md-12 col-sm-12 box-index contenedorFormulario">
+        <div class=" box-index contenedorFormulario">
           <h1 class="box-index-titulo">Seleccione el tipo de Asistencia y Prestacion</h1>
-      <!-- Formulario   -->
+            <!-- Formulario   -->
           <form action="">
-        <div class="row ">
-          <div class="col-md-6 contenedorFormulario">
-            <div class="btn-group" id="firstButtonGroup" role="group" aria-label="Basic radio toggle button group">
-              <label for="" class="col-md-2 col-form-label "><h3>Area</h3></label>
-              
-              <div class="col-md-12">
-                <button type="button" data-bs-toggle="button"  class="btn btn-primary btn-lg rounded-pill"  name="categoryTerapia" value="categoryTerapia" id="categoryTerapia" autocomplete="off" >Terapia</button>
-                <button type="button"  class="btn btn-primary btn-lg rounded-pill"  name="categoryDiagnostico" value="categoryDiagnostico" id="diagnosticoTerapia" autocomplete="off">Diagnostico</button>
-                <button type="button"  class="btn btn-primary btn-lg rounded-pill" name="categoryAsesoramiento" value="categoryAsesoramiento" id="asesoramientoTerapia" autocomplete="off">Asesoramiento</button>
+            <div class="row ">
+              <div class="contenedorFormulario">
+                <div class="btn-group" id="firstButtonGroup" role="group" aria-label="Basic radio toggle button group">
+                  <div class="categories">
+                    <h3>Area</h3>     
+                  </div>                                 
+                  <div class="col-md-12">
+                    <button type="button"  class="btn btn-primary"  name="categoryTerapia" value="categoryTerapia" id="categoryTerapia" autocomplete="off" >Terapia</button>
+                    <button type="button"  class="btn btn-primary"  name="categoryDiagnostico" value="categoryDiagnostico" id="diagnosticoTerapia" autocomplete="off">Diagnostico</button>
+                    <button type="button"  class="btn btn-primary" name="categoryAsesoramiento" value="categoryAsesoramiento" id="asesoramientoTerapia" autocomplete="off">Asesoramiento</button>
+                  </div>
+                </div> 
+               <!-- Agrego Botones Servico con JS   -->
+    
+                <br><br>
+                <div class="btn-group" id="secondButtonGroup" role="group" aria-label="Basic radio toggle button group">
+                </div>
+                <!-- Agrego botones profesional -->
+                <br><br>
+                <div>
+                  <h3 id="hideTitle" class="align-items-center" style="display:none">Selecciona el Profesional</h3>
+                </div>
+                <br>
+                <div class="btn-group thirdButtonGroup" id="thirdButtonGroup" role="group" aria-label="Basic radio toggle button group">
+                </div>
               </div>
-            </div> 
-           <!-- Agrego Botones Servico con JS   -->
-
-            <br><br>
-            <div class="btn-group" id="secondButtonGroup" role="group" aria-label="Basic radio toggle button group">
             </div>
-            <!-- Agrego botones profesional -->
-            <br><br>
-            <div class="btn-group thirdButtonGroup" id="thirdButtonGroup" role="group" aria-label="Basic radio toggle button group">
-            </div>
-          </div>
-        </div>
-        <button type="button" href="./formulario.html" class="btn btn-primary">Anterior</button>
-        <button id="signUpBtn" class="">Pagar</button>
-        <div class="conteiner" id="popup">
-          <div class="modal-form">
-              <h4 class="modal-title">Introduzca los datos de su tarjeta</h4>
-              <form action="" class="form-body">
-                  <div class="form-group">
-                      <input type="text" required>
+            <!-- <button type="button"  ></button> -->
+            <a class="btn btn-primary" href="./formulario.html">Anterior</a>
+            <button type="buttom" id="agendarCita" disabled="disabled" class="btn btn-primary">Iniciar Pago</button>
+            <div class="popupConteiner" id="popup">
+              <div class="modal-form">
+                <h4 class="modal-title">Introduzca los datos de su tarjeta</h4>
+                <form action="" class="form-body">
+                    <div class="form-group">
+                      <input type="text" required="required" aria-required="true">
                       <span>Nombre Completo que figura en la tarjeta</span>
                   </div>
                   <div class="form-group">
-                      <input type="text" required>
-                      <span>Fecha da expiracion</span>
+                      <input type="text" required="required" aria-required="true">
+                      <span>MM/AAAA</span>
                   </div>
                   <div class="form-group">
-                    <input type="text" required>
+                    <input type="text" required="required" aria-required="true">
                     <span>CVC</span>
-                </div>
+                  </div>
                   <div class="form-group">
                     <input type="text" class="input-element" placeholder="Introduzca los numeros de su tarjeta de credito">
-                  </br>
+                    </br>
                       <i class="icon fab fa-cc-visa"></i>
                       <i class="icon fab fa-cc-mastercard"></i>
                       <i class="icon fab fa-cc-amex"></i>
                   </div>
                   <div class="form-group">
-                      <input type="submit" onclick="guardar()" value="Pagar" id="singUp">
+                    <input type="button" onclick="guardar()" value="Pagar" id="singUp">
                   </div>
-              </form>
-              <button id="closebtn">&times</button>
-          </div>
-      </div>
-   
-        <!-- <div class="conteiner">
-          <fieldset class="row mb-3">
-            <legend class="col-form-label col-sm-2 pt-0">Seleccione un Profesional</legend>
-            <div class="col-sm-10" id="staff">
-              
+                </form>
+                  <button id="closebtn">&times</button>
+              </div>
             </div>
-          </fieldset>
+          </form>
         </div>
-        <button type="reset" onclick="agregar()" class="btn btn-primary">Agendar</button> -->
-      </form>
-        </div>
-      </div>  
-
-     
-      
-      
-      <div class="container">
-        <table class="table" id="tabla">
-            <thead class="thead-inverse">
-                <h1>Turnos Asignados en la base de Datos</h1>
-                <tr>
-                    <th>Correo Electronico</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Fecha de Nacimiento</th>
-                    <th>Ciudad</th>
-                    <th>Profesional</th>
-                </tr>
-            </thead>
-            <tbody>
-    
-            </tbody>
-    
-        </table>
-    </div>
+      </div>
     </main>
     <!-- Footer -->
     <footer>
       <div class="row bg-light text-center text-white ">
-        <div class="col  ">}
+        <div class="col  ">
           <!-- Grid container -->
             <div class="container p-4 pb-0">
               <!-- Section: Social media -->
@@ -195,10 +168,17 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+          // https://dashboard.emailjs.com/admin/account
+          emailjs.init('x04Hal0zmEyxJVLEx');
+      })();
+  </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/1d49c29259.js" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js" integrity="sha512-KaIyHb30iXTXfGyI9cyKFUIRSSuekJt6/vqXtyQKhQP6ozZEGY8nOtRS6fExqE4+RbYHus2yGyYg1BrqxzV6YA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="../JS/app06_02.js"></script>
+    <script src="../JS/formularioDatosReserva.js"></script>
   </body>
 </html>

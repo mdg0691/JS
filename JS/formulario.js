@@ -8,13 +8,6 @@ let inputcorreo = document.querySelector('input[type="email"]'),
     inputFechaNacimiento=document.querySelector('input[type="date"]'),
     inputCiudad=document.getElementById("city"),
     radioBotons=document.querySelectorAll("input[name='names']");
-    // inputGuardar=document.getElementById("boton");
-//const tbodyTabla = document.querySelector('.table tbody');
-
-    
-    
-
-
 
 let findSelector2= () =>{
     let selector2=document.querySelectorAll('.custom-control-input');
@@ -23,9 +16,6 @@ let findSelector2= () =>{
     for (i = 0; i < selector2.length; i++) {
       if (selector2[i].checked) {
         txt =txt+" "+selector2[i].value ;
-        //viaContacto.push(txt);
-        
-        //console.log(viaContacto);
       }
     }
     return txt;
@@ -40,7 +30,6 @@ class Paciente {
         this.fechaNacimiento=fechaNacimiento;
         this.city=city;
         this.viaContacto=viaContacto
-
     }
 }
 
