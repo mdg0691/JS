@@ -176,6 +176,7 @@ const renderProfesional=(element) =>{
                         </select>
                     </div>           
                </div>
+               <h4>Tarifa por sesion : 1800 $ </h4>
             </div>`;
             agendarCitaActive(false);
         });  
