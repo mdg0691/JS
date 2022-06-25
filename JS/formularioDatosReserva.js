@@ -103,6 +103,7 @@ function doSomethingServicio(j){
     j.stopPropagation();
     return clickedItem;
 }
+//Añadir botones de servicio
 const addButtonsGroup=(x,y) =>{
     let buttonGroup=document.getElementById(y);
     let buttonServicio="";
@@ -140,6 +141,7 @@ const renderThirdButton=(element) =>{
         </div>`
         })
 }
+//Funcion para renderizar profesionales
 const renderProfesional=(element) =>{
     element.forEach(e => {       
         document.querySelector(`#btn${e.id}`).addEventListener("click",()=>{
@@ -200,7 +202,8 @@ const sendMail=(params)=>{
     .then(function(res){
         console.log("sucess",res.status);
     })
-   }    
+   }
+//Funcion para llamar a renderizar lista de servicios y renderizar profesionales    
 const añadirProfesional=(element) =>{
     buttonGroup=document.getElementById("thirdButtonGroup");
     buttonGroup.innerHTML =``;  // limpio pantalla
@@ -219,10 +222,11 @@ const swalFire=()=>{
           }));
     });
 }
+//Funcion para cerrar popup de tarjeta de pago
 const closePopup=()=>{
         document.getElementById("popup").style.display="none";
 }
-  
+// Funcion de evento al pagar el servicio, enviando mail mediante emailJS y luego cartel de pago realizado con exito con swalFire
 const guardar=()=>{
     sendMail();
     swalFire();
